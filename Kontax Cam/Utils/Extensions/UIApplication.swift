@@ -14,6 +14,9 @@ extension UIApplication {
     }
     
     var keyWindow: UIWindow? {
-        return UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        return UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first(where: { $0.isKeyWindow })
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ModalHeaderProtocol: class {
+protocol ModalHeaderProtocol: AnyObject {
     func didTapInfo()
 }
 

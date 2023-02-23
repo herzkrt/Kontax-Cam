@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CustomisationControlProtocol: class {
+protocol CustomisationControlProtocol: AnyObject {
     /// Called when the done button is pressed
     func didTapDone()
 }

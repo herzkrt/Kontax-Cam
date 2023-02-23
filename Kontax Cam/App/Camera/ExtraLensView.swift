@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-protocol ExtraLensViewDelegate: class {
+protocol ExtraLensViewDelegate: AnyObject {
     func didTapOnExtraLensView()
 }
 

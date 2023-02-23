@@ -9,7 +9,7 @@
 import DTPhotoViewerController
 import UIKit
 
-protocol PhotoDisplayDelegate: class {
+protocol PhotoDisplayDelegate: AnyObject {
     /// Tells the delegate to share the photo at index
     func photoDisplayWillShare(photoAt index: Int)
     /// Tells the delegate to save  the photo at index

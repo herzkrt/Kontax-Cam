@@ -206,7 +206,7 @@ extension PhotoEditorViewController: FiltersGestureDelegate {
     func didSwipeToChangeFilter(withNewIndex newIndex: Int) {
         collectionIndex = newIndex
         let loadingVC = LoadingViewController()
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
+        let window = UIApplication.shared.keyWindow!
         TapticHelper.shared.lightTaptic()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
@@ -250,7 +250,7 @@ extension PhotoEditorViewController: FXCollectionDelegate {
     func didTapEffect(effect: FilterType) {
         smartAppend(effect)
         let loadingVC = LoadingViewController()
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
+        let window = UIApplication.shared.keyWindow!
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
@@ -273,7 +273,7 @@ extension PhotoEditorViewController: FXCollectionDelegate {
     
     func didTapDone() {
         let loadingVC = LoadingViewController()
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
+        let window = UIApplication.shared.keyWindow!
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }

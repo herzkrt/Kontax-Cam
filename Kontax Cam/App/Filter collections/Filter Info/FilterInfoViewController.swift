@@ -208,10 +208,11 @@ class FilterInfoViewController: UIViewController {
                 if let selectedCollectionIAP = selectedCollectionIAP {
                     let iapID = IAPManager.shared.bundleID + "." + selectedCollectionIAP.registeredPurchase.suffix
                     
-                    DispatchQueue.main.async {
-                        if removedIAPs.contains(iapID) && iapButton.isEnabled == false {
-                            iapButton.isEnabled = true
-                            tryButton.isHidden = false
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        if removedIAPs.contains(iapID) && self.iapButton.isEnabled == false {
+                            self.iapButton.isEnabled = true
+                            self.tryButton.isHidden = false
                             
                             var purchasedFilters = UserDefaultsHelper.shared.getData(type: [String].self, forKey: .purchasedFilters)!
                             purchasedFilters.removeAll(where: { $0 == selectedCollectionIAP.title })

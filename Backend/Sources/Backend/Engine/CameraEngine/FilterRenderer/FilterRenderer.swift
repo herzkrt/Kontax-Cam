@@ -9,7 +9,7 @@ import CoreMedia
 
 // Modified from AVCAMFilter by Apple
 // https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/avcamfilter_applying_filters_to_a_capture_stream
-public protocol FilterRenderer: class {
+public protocol FilterRenderer: AnyObject {
     var isPrepared: Bool { get }
     var filterName: FilterName { get set }
     

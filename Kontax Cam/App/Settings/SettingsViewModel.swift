@@ -9,7 +9,7 @@
 import UIKit
 import Backend
 
-protocol SettingsViewModelDelegate: class {
+protocol SettingsViewModelDelegate: AnyObject {
     func appearanceTapped()
     func apppIconsTapped()
     func restorePurchaseTapped()

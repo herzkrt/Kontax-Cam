@@ -330,7 +330,7 @@ extension LabCollectionViewController {
             if let indexPath = collectionView?.indexPathForItem(at: p) {
                 TapticHelper.shared.lightTaptic()
                 
-                let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+                let window = UIApplication.shared.keyWindow
                 
                 self.previewVC.imageView.sd_setImage(with: imageObjects[indexPath.row].url, placeholderImage: UIImage(named: "labCellPlaceholder"), options: .scaleDownLargeImages, context: [.imageThumbnailPixelSize: self.previewVC.imageView.bounds.size])
                 window?.addSubview(self.previewVC.view)

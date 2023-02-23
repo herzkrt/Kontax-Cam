@@ -11,7 +11,7 @@ import Combine
 import SafariServices
 import Backend
 
-protocol FilterListDelegate: class {
+protocol FilterListDelegate: AnyObject {
     /// Tells the delegate that a filter collection has been selected
     func filterListDidSelectCollection(_ collection: FilterCollection)
 }
@@ -57,9 +57,9 @@ class FiltersCollectionViewController: UICollectionViewController {
                 // Reset to A
                 selectedCollection = .aCollection
                 
-                DispatchQueue.main.async {
-                    delegate?.filterListDidSelectCollection(.aCollection)
-                    self.collectionView.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    self?.delegate?.filterListDidSelectCollection(.aCollection)
+                    self?.collectionView.reloadData()
                 }
             })
             .sink { _ in }

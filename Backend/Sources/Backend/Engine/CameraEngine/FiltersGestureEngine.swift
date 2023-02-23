@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol FiltersGestureDelegate: class {
+public protocol FiltersGestureDelegate: AnyObject {
     /// Called everytime the gesture detect a new change in the gesture
     func didSwipeToChangeFilter(withNewIndex newIndex: Int)
 }

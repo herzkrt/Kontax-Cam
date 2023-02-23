@@ -11,7 +11,7 @@ import PanModal
 import SwiftUI
 import Backend
 
-protocol FXCollectionDelegate: class {
+protocol FXCollectionDelegate: AnyObject {
     func didTapEffect(effect: FilterType)
     func didTapDone()
 }
